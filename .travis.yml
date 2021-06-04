@@ -1,4 +1,3 @@
-sudo: false
 language: node_js
 node_js:
   - 12 # use nodejs v12 LTS
@@ -11,8 +10,9 @@ script:
 deploy:
   provider: pages
   skip-cleanup: true
+  local-dir: public
   github-token: $GH_TOKEN
   keep-history: true
   on:
     branch: master
-  local-dir: public
+  
