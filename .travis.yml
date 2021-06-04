@@ -10,9 +10,8 @@ script:
 deploy:
   provider: pages
   skip-cleanup: true
-  local-dir: public
   github-token: $GH_TOKEN
   keep-history: true
   on:
     branch: master
-  
+  local-dir: public
