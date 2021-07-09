@@ -1,13 +1,8 @@
 ---
-title: 函数式编程上
+title: react脚手架配置代理总结
 date: 2021-06-20 16:32:02
 tags: 
 ---
-
-# react脚手架配置代理总结
-
-
-
 ## 方法一
 
 > 在package.json中追加如下配置
