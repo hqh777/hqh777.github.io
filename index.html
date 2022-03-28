@@ -123,7 +123,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/20/react-app-proxy/" data-id="ckqvz7m6q000123o8bgy7eyk7" data-title="react脚手架配置代理总结" class="article-share-link">Teilen</a>
+      <a data-url="http://example.com/2021/06/20/react-app-proxy/" data-id="cl1a588er0001dxvi89hv5gkv" data-title="react脚手架配置代理总结" class="article-share-link">Teilen</a>
       
       
       
@@ -190,7 +190,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/10/web-engineering/" data-id="ckqvz7m6r000223o815zzgbz1" data-title="前端工程化" class="article-share-link">Teilen</a>
+      <a data-url="http://example.com/2021/06/10/web-engineering/" data-id="cl1a588es0002dxvi7mqk47hi" data-title="前端工程化" class="article-share-link">Teilen</a>
       
       
       
@@ -306,13 +306,13 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> _ = <span class="built_in">require</span>(<span class="string">&#x27;lodash&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getArea</span>(<span class="params">r</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(r)</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.PI * r * r</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> getAreaWithMemory = _.memoize(getArea)</span><br><span class="line"><span class="built_in">console</span>.log(getAreaWithMemory(<span class="number">4</span>))</span><br><span class="line"><span class="built_in">console</span>.log(getAreaWithMemory(<span class="number">4</span>))</span><br><span class="line"><span class="built_in">console</span>.log(getAreaWithMemory(<span class="number">4</span>))</span><br><span class="line"><span class="comment">// 4</span></span><br><span class="line"><span class="comment">// 50.26548245743669</span></span><br><span class="line"><span class="comment">// 50.26548245743669</span></span><br><span class="line"><span class="comment">// 50.26548245743669</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 看到输出的4只执行了一次，因为其结果被缓存下来了</span></span><br></pre></td></tr></table></figure>
 <p>那我们可以模拟一个记忆函数</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">memoize</span> (<span class="params">f</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> cache = &#123;&#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// arguments是一个伪数组，所以要进行字符串的转化</span></span><br><span class="line">    <span class="keyword">let</span> key = <span class="built_in">JSON</span>.stringify(<span class="built_in">arguments</span>)</span><br><span class="line">    <span class="comment">// 如果缓存中有值就把值赋值，没有值就调用f函数并且把参数传递给它</span></span><br><span class="line">    cache[key] = cache[key] || f.apply(f,<span class="built_in">arguments</span>)</span><br><span class="line">    <span class="keyword">return</span> cache[key]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> getAreaWithMemory1 = memoize(getArea)</span><br><span class="line"><span class="built_in">console</span>.log(getAreaWithMemory1(<span class="number">4</span>))</span><br><span class="line"><span class="built_in">console</span>.log(getAreaWithMemory1(<span class="number">4</span>))</span><br><span class="line"><span class="built_in">console</span>.log(getAreaWithMemory1(<span class="number">4</span>))</span><br><span class="line"><span class="comment">// 4</span></span><br><span class="line"><span class="comment">// 50.26548245743669</span></span><br><span class="line"><span class="comment">// 50.26548245743669</span></span><br><span class="line"><span class="comment">// 50.26548245743669</span></span><br></pre></td></tr></table></figure>
-<h4 id="可测试"><a href="#可测试" class="headerlink" title="可测试"></a>可测试</h4><p>纯函数让测试更加的方便</p>
+<h4 id="可测试"><a href="#可测试" class="headerlink" title="可测试"></a>可测试</h4><p>纯函数让测试更加的方便（传入相同的参数，它们将始终产生相同的结果）</p>
 <h4 id="并行处理"><a href="#并行处理" class="headerlink" title="并行处理"></a>并行处理</h4><ul>
 <li>多线程环境下并行操作共享的内存数据很可能会出现意外情况。纯函数不需要访问共享的内存数据，所以在并行环境下可以任意运行纯函数</li>
-<li>虽然JS是单线程，但是ES6以后有一个Web Worker，可以开启一个新线程</li>
+<li>虽然JS是单线程，但是HTML5提供给我们前端开发一个Web Workers API，可以开启一个新线程<br>（Web Workers 使得一个Web应用程序可以在与主执行线程分离的后台线程中运行一个脚本操作。这样做的好处是可以在一个单独的线程中执行费时的处理任务，从而允许主（通常是UI）线程运行而不被阻塞。<br>它的作用就是给JS创造多线程运行环境，允许主线程创建worker线程，分配任务给后者，主线程运行的同时worker线程也在运行，相互不干扰，在worker线程运行结束后把结果返回给主线程。这样做的好处是主线程可以把计算密集型或高延迟的任务交给worker线程执行，这样主线程就会变得轻松，不会被阻塞或拖慢。这并不意味着JS语言本身支持了多线程能力，而是浏览器作为宿主环境提供了JS一个多线程运行的环境。<br>不过因为worker一旦新建，就会一直运行，不会被主线程的活动打断，这样有利于随时响应主线程的通性，但是也会造成资源的浪费，所以不应过度使用，用完注意关闭。或者说：如果worker无实例引用，该worker空闲后立即会被关闭；如果worker实列引用不为0，该worker空闲也不会被关闭。）</li>
 </ul>
 <h3 id="副作用"><a href="#副作用" class="headerlink" title="副作用"></a>副作用</h3><p>副作用就是让一个函数变得不纯，纯函数的根据市相同的输入返回相同的输出，如果函数依赖于外部的状态就无法保证输出相同，就会带来副作用，如下面的例子：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不纯的函数，因为它依赖于外部的变量</span></span><br><span class="line"><span class="keyword">let</span> mini = <span class="number">18</span> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkAge</span> (<span class="params">age</span>) </span>&#123; </span><br><span class="line">    <span class="keyword">return</span> age &gt;= mini </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不纯的函数，因为它依赖于外部的变量</span></span><br><span class="line"><span class="keyword">let</span> mini = <span class="number">18</span> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkAge</span> (<span class="params">age</span>) </span>&#123; </span><br><span class="line">    <span class="keyword">return</span> age &gt;= mini </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 纯的(有硬编码，后续可以通过柯里化解决)</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkAge</span> (<span class="params">age</span>) </span>&#123;</span><br><span class="line"><span class="keyword">let</span> mini = <span class="number">18</span></span><br><span class="line"><span class="keyword">return</span> age &gt;= mini</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>副作用来源：</p>
 <ul>
 <li>配置文件</li>
@@ -325,7 +325,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/04/functional-programming/" data-id="ckqvz7m6m000023o80wp47dlr" data-title="函数式编程上" class="article-share-link">Teilen</a>
+      <a data-url="http://example.com/2021/06/04/functional-programming/" data-id="cl1a588em0000dxvi8ihffjs0" data-title="函数式编程上" class="article-share-link">Teilen</a>
       
       
       
@@ -563,7 +563,7 @@ main.js                         入口文件
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/01/web-standard/" data-id="ckqvz7m6s000323o80czy8u4g" data-title="前端规范" class="article-share-link">Teilen</a>
+      <a data-url="http://example.com/2021/06/01/web-standard/" data-id="cl1a588et0003dxvidong9910" data-title="前端规范" class="article-share-link">Teilen</a>
       
       
       
@@ -634,7 +634,7 @@ main.js                         入口文件
   <div class="outer">
     <div id="footer-info" class="inner">
       
-      &copy; 2021 John Doe<br>
+      &copy; 2022 John Doe<br>
       Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
