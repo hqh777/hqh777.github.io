@@ -123,7 +123,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/20/react-app-proxy/" data-id="cl1a5mial0001aqm4fh6i9t79" data-title="react脚手架配置代理总结" class="article-share-link">Teilen</a>
+      <a data-url="http://example.com/2021/06/20/react-app-proxy/" data-id="cl1afnw4v0001dvpy3d9edxh6" data-title="react脚手架配置代理总结" class="article-share-link">Teilen</a>
       
       
       
@@ -190,7 +190,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/10/web-engineering/" data-id="cl1a5mian0002aqm4gatqddxc" data-title="前端工程化" class="article-share-link">Teilen</a>
+      <a data-url="http://example.com/2021/06/10/web-engineering/" data-id="cl1afnw4w0002dvpy1i3p4ilh" data-title="前端工程化" class="article-share-link">Teilen</a>
       
       
       
@@ -301,7 +301,7 @@
 <ul>
 <li>体验</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> _ = <span class="built_in">require</span>(<span class="string">&#x27;lodash&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> array = [<span class="string">&#x27;jack&#x27;</span>, <span class="string">&#x27;tom&#x27;</span>, <span class="string">&#x27;lucy&#x27;</span>, <span class="string">&#x27;kate&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// head的别名是first  _.head(array)也可以</span></span><br><span class="line"><span class="built_in">console</span>.log(_.first(array)) <span class="comment">//jack</span></span><br><span class="line"><span class="built_in">console</span>.log(_.last(array)) <span class="comment">//kate</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(_.toUpper(_.first(array))) <span class="comment">//JACK</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(_.reverse(array))  <span class="comment">//[ &#x27;kate&#x27;, &#x27;lucy&#x27;, &#x27;tom&#x27;, &#x27;jack&#x27; ]</span></span><br><span class="line"><span class="comment">// 数组的翻转不是纯函数，因为会改变原数组。这里的reserve是使用了数组的reverse，所以也不是纯函数</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> r = _.each(array, <span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(item, index)</span><br><span class="line">  <span class="comment">// kate 0</span></span><br><span class="line">  <span class="comment">// lucy 1</span></span><br><span class="line">  <span class="comment">// tom 2</span></span><br><span class="line">  <span class="comment">// jack 3</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(r) <span class="comment">// [ &#x27;kate&#x27;, &#x27;lucy&#x27;, &#x27;tom&#x27;, &#x27;jack&#x27; ]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> _ = <span class="built_in">require</span>(<span class="string">&#x27;lodash&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> array = [<span class="string">&#x27;jack&#x27;</span>, <span class="string">&#x27;tom&#x27;</span>, <span class="string">&#x27;lucy&#x27;</span>, <span class="string">&#x27;kate&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// head的别名是first  _.head(array)也可以</span></span><br><span class="line"><span class="built_in">console</span>.log(_.first(array)) <span class="comment">//jack</span></span><br><span class="line"><span class="built_in">console</span>.log(_.last(array)) <span class="comment">//kate</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(_.toUpper(_.first(array))) <span class="comment">//JACK</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(_.reverse(array))  <span class="comment">//[ &#x27;kate&#x27;, &#x27;lucy&#x27;, &#x27;tom&#x27;, &#x27;jack&#x27; ]</span></span><br><span class="line"><span class="comment">// 数组的翻转不是纯函数，因为会改变原数组。这里的reserve是使用了数组的reverse，所以也不是纯函数</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h3 id="纯函数的好处"><a href="#纯函数的好处" class="headerlink" title="纯函数的好处"></a>纯函数的好处</h3><h4 id="可缓存"><a href="#可缓存" class="headerlink" title="可缓存"></a>可缓存</h4><p>因为对于相同的输入始终有相同的结果，那么可以把纯函数的结果缓存起来，可以提高性能。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> _ = <span class="built_in">require</span>(<span class="string">&#x27;lodash&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getArea</span>(<span class="params">r</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(r)</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.PI * r * r</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> getAreaWithMemory = _.memoize(getArea)</span><br><span class="line"><span class="built_in">console</span>.log(getAreaWithMemory(<span class="number">4</span>))</span><br><span class="line"><span class="built_in">console</span>.log(getAreaWithMemory(<span class="number">4</span>))</span><br><span class="line"><span class="built_in">console</span>.log(getAreaWithMemory(<span class="number">4</span>))</span><br><span class="line"><span class="comment">// 4</span></span><br><span class="line"><span class="comment">// 50.26548245743669</span></span><br><span class="line"><span class="comment">// 50.26548245743669</span></span><br><span class="line"><span class="comment">// 50.26548245743669</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 看到输出的4只执行了一次，因为其结果被缓存下来了</span></span><br></pre></td></tr></table></figure>
 <p>那我们可以模拟一个记忆函数</p>
@@ -313,19 +313,12 @@
 </ul>
 <h3 id="副作用"><a href="#副作用" class="headerlink" title="副作用"></a>副作用</h3><p>副作用就是让一个函数变得不纯，纯函数的根据市相同的输入返回相同的输出，如果函数依赖于外部的状态就无法保证输出相同，就会带来副作用，如下面的例子：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不纯的函数，因为它依赖于外部的变量</span></span><br><span class="line"><span class="keyword">let</span> mini = <span class="number">18</span> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkAge</span> (<span class="params">age</span>) </span>&#123; </span><br><span class="line">    <span class="keyword">return</span> age &gt;= mini </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 纯的(有硬编码，后续可以通过柯里化解决)</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkAge</span> (<span class="params">age</span>) </span>&#123;</span><br><span class="line"><span class="keyword">let</span> mini = <span class="number">18</span></span><br><span class="line"><span class="keyword">return</span> age &gt;= mini</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>副作用来源：</p>
-<ul>
-<li>配置文件</li>
-<li>数据库</li>
-<li>获取用户的输入</li>
-<li>……</li>
-</ul>
 <p>所有的外部交互都有可能带来副作用，副作用也使得方法通用性下降不适合扩展和可重用性，同时副作用会给程序中带来安全隐患给程序带来不确定性，但是副作用不可能完全禁止，我们不能禁止用户输入用户名和密码，只能尽可能控制它们在可控范围内发生。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/04/functional-programming/" data-id="cl1a5miah0000aqm4aw5pgauk" data-title="函数式编程上" class="article-share-link">Teilen</a>
+      <a data-url="http://example.com/2021/06/04/functional-programming/" data-id="cl1afnw4r0000dvpy3mkj8f4a" data-title="函数式编程上" class="article-share-link">Teilen</a>
       
       
       
@@ -563,7 +556,7 @@ main.js                         入口文件
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/01/web-standard/" data-id="cl1a5miao0003aqm4fj6gaqhk" data-title="前端规范" class="article-share-link">Teilen</a>
+      <a data-url="http://example.com/2021/06/01/web-standard/" data-id="cl1afnw4x0003dvpycf6h41pg" data-title="前端规范" class="article-share-link">Teilen</a>
       
       
       
