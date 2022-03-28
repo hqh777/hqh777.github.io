@@ -367,14 +367,6 @@ console.log(_.toUpper(_.first(array))) //JACK
 console.log(_.reverse(array))  //[ 'kate', 'lucy', 'tom', 'jack' ]
 // 数组的翻转不是纯函数，因为会改变原数组。这里的reserve是使用了数组的reverse，所以也不是纯函数
 
-const r = _.each(array, (item, index) => {
-  console.log(item, index)
-  // kate 0
-  // lucy 1
-  // tom 2
-  // jack 3
-})
-console.log(r) // [ 'kate', 'lucy', 'tom', 'jack' ]
 ```
 ### 纯函数的好处
 #### 可缓存
@@ -445,10 +437,4 @@ return age >= mini
 }
 
 ```
-副作用来源：
-- 配置文件
-- 数据库
-- 获取用户的输入
-- ......
-
 所有的外部交互都有可能带来副作用，副作用也使得方法通用性下降不适合扩展和可重用性，同时副作用会给程序中带来安全隐患给程序带来不确定性，但是副作用不可能完全禁止，我们不能禁止用户输入用户名和密码，只能尽可能控制它们在可控范围内发生。
